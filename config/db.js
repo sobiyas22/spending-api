@@ -1,0 +1,22 @@
+import mongoose from 'mongoose';
+import dotenv from "dotenv";
+dotenv.config();
+
+URL='mongodb+srv://sobiyashaikh:spending-db@spending-db.myqwxft.mongodb.net/'
+const connectDB = async () => {
+  const uri = process.env.MONGO_URI || URL;
+  if (!uri) {
+    console.error('MONGO_URI not set in environment');
+    process.exit(1);
+  }
+
+  try {
+    await mongoose.connect(uri, { autoIndex: true });
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error('MongoDB connection failed:', err);
+    process.exit(1);
+  }
+};
+
+export default connectDB;
