@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "f7fba08f-b2a5-481b-9cb0-21bc74dce25d",
+		"name": "USER",
+		"description": "Assignment on backend fundamentals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51339155",
+		"_collection_link": "https://sobiya-shaikh-9031425.postman.co/workspace/Sobiya-Shaikh's-Workspace~b714b975-97eb-45b5-8d62-34ccc787eb39/collection/51339155-f7fba08f-b2a5-481b-9cb0-21bc74dce25d?action=share&source=collection_link&creator=51339155"
+	},
+	"item": [
+		{
+			"name": "Get user data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/6963373b3b5a72cc847c6d55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6963373b3b5a72cc847c6d55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Samarth Shukla\",\n    \"occupation\" : \"Developer\",\n    \"location\" : \"Pune\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Samarth Shukla\",\n    \"occupation\" : \"QA Engineer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/6963373b3b5a72cc847c6d55/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6963373b3b5a72cc847c6d55",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Samarth Shukla\",\n    \"occupation\" : \"Developer\",\n    \"location\" : \"Pune\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/6963373b3b5a72cc847c6d55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6963373b3b5a72cc847c6d55"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
