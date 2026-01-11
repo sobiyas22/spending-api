@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import { v4 as uuidv4 } from 'uuid';
 
 const userSchema = new mongoose.Schema({
     id: {
@@ -11,16 +12,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    balance:{
-        type: Number,
-        required: true,
-        min: 0
+    occupation:{
+        type: String,
     },
-    monthlyLimit: {
-        type: Number,
-        required: true,
-        min: 0
-    }
+    location:{
+        type: String,
+    },
+    
 }, {
     timestamps: true
 });

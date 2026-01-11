@@ -1,10 +1,10 @@
-import userModel from "../models/user.model";
+import userModel from "../models/user.model.js";
 
 
 const createUser = async (req, res) => {
     try {
         const { name, monthlyLimit, balance } = req.body;
-
+        console.log('req.body', req.body);
         if (balance < 0) {
             return res.status(400).json({ error: "Balance cannot be negative" });
         }
@@ -14,6 +14,7 @@ const createUser = async (req, res) => {
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ error: "Internal Server Error" });
+        console.log(error);
     }
 };
 
@@ -47,22 +48,5 @@ const updateUserInformation = async (req, res) => {
     }
 };
 
-const updateUserbalance = async (userId, amount) => {
-    try {
-        const user = await userModel.findById(userId);
-        if (!user) {
-            throw new Error("User not found");
-        }
 
-        user.balance += amount;
-        if (user.balance < 0) {
-            throw new Error("Insufficient balance");
-        }
-
-        await user.save();
-        return user;
-    } catch (error) {
-        throw error;
-    }
-};
-export { createUser, getUserById, updateUserInformation, updateUserbalance };
+export { createUser, getUserById, updateUserInformation };
